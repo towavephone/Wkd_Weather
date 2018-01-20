@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white_wymimicry"
+    >
+
+    <RelativeLayout
+        android:id="@+id/selectCityTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/orange_menu"
+        android:animateLayoutChanges="true"
+    	android:padding="5dp" >
+
+        <Button
+            android:id="@+id/selectCityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_title_back"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:text="返回"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:lines="1"
+            android:text="城市选择"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+        
+        <Button
+            android:id="@+id/selectSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_title_ensure"
+            android:padding="5dp"
+            android:text="确定"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/cityCodeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_below="@+id/selectCityTitleLayout"
+        android:layout_above="@+id/textViewHint"
+        android:background="@color/orange_menu"
+        android:baselineAligned="false" 
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="0.5dp"
+            android:layout_marginLeft="0.5dp" >
+
+            <TextView
+                android:id="@+id/provinceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/lightgray"
+				android:lines="2"
+				android:gravity="center"
+                android:textColor="@color/blue"
+                android:text="请选择省：" 
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ProgressBar
+                android:id="@+id/provinceProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/provinceTextView"
+                android:layout_alignParentRight="true" />
+
+            <ListView
+                android:id="@+id/provinceListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/provinceTextView"
+                android:layout_marginTop="1dp"
+                android:background="@color/white_wymimicry"
+            	android:scrollbars="vertical"
+                android:divider="@color/orange_menu"
+                android:dividerHeight="0.1dp"
+                android:fastScrollEnabled="true"
+                android:scrollbarStyle="outsideOverlay"
+                android:smoothScrollbar="true" >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="0.5dp"
+            android:layout_marginLeft="0.5dp" >
+
+            <TextView
+                android:id="@+id/cityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/lightgray"
+                android:lines="2"
+				android:gravity="center"
+                android:textColor="@color/blue"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="请选择市：" />
+
+            <ProgressBar
+                android:id="@+id/cityProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cityTextView"
+                android:layout_alignParentRight="true" />
+
+            <ListView
+                android:id="@+id/cityListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cityTextView"
+                android:layout_marginTop="1dp"
+                android:background="@color/white_wymimicry"
+            	android:scrollbars="vertical"
+                android:divider="@color/orange_menu"
+                android:dividerHeight="0.1dp"
+                android:fastScrollEnabled="true"
+                android:scrollbarStyle="outsideOverlay"
+                android:smoothScrollbar="true" >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="0.5dp"
+            android:layout_marginLeft="0.5dp" >
+
+            <TextView
+                android:id="@+id/countyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/lightgray"
+                android:lines="2"
+				android:gravity="center"
+                android:textColor="@color/blue"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="请选择区/县：" />
+
+            <ProgressBar
+                android:id="@+id/countyProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/countyTextView"
+                android:layout_alignParentRight="true" />
+
+            <ListView
+                android:id="@+id/countyListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/countyTextView"
+                android:layout_marginTop="1dp"
+                android:background="@color/white_wymimicry"
+            	android:scrollbars="vertical"
+                android:divider="@color/orange_menu"
+                android:dividerHeight="0.1dp"
+                android:fastScrollEnabled="true"
+                android:scrollbarStyle="outsideOverlay"
+                android:smoothScrollbar="true" >
+            </ListView>
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/textViewHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:padding="3dp"
+        android:background="@color/lightgray"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:text="Tips：\n\t\t本次共收录全国省、市、区/县2564个，因数据量较大，在切换省市过程中出现的短暂卡顿，属于正常现象。"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

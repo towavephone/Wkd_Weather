@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white_wymimicry" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:animateLayoutChanges="true"
+        android:background="@color/orange_menu"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/returnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_title_back"
+            android:padding="10dp"
+            android:text="返回"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:lines="1"
+            android:text="百度天气预报"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white_wymimicry" />
+
+        <Button
+            android:id="@+id/moreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/returnButton"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_title_ensure"
+            android:padding="10dp"
+            android:text="更多"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white_wymimicry" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:animateLayoutChanges="true"
+        android:background="@color/light_blue_menu"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/cityNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:hint="城市"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:lines="2"
+            android:padding="15dp"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/dayWeekTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cityNameTextView"
+            android:layout_marginRight="10dp"
+         	android:padding="5dp"
+            android:hint="无数据"
+            android:lines="1"
+            android:textSize="15sp"
+           />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0.5dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dayWeekTextView"
+            android:layout_alignTop="@+id/cityNameTextView"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_toRightOf="@+id/cityNameTextView"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/refreshTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/refresh_n"
+            android:drawablePadding="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/dayWeekTextView"
+            android:gravity="center_vertical"
+            android:hint="刷新时间"
+            android:textSize="10sp"
+            android:lines="1" />
+
+        <TextView
+            android:id="@+id/weatherTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view1"
+            android:layout_alignTop="@+id/view1"
+            android:layout_above="@+id/refreshTimeTextView"
+            android:gravity="center"
+            android:hint="天气情况"
+            android:lines="2"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/weatherScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout2"
+        android:animateLayoutChanges="true"
+        android:background="@color/orange_menu" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#cccccc"
+                android:text="今日生活指数" />
+
+            <TextView
+                android:id="@+id/baiduLivingAirTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_air"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingAllergicTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_allergic"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingColdTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_cold"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingUltravioletTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_ultraviolet"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingDressTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_dress"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingCosyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_cosy"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingTravelTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_travel"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+
+            <TextView
+                android:id="@+id/baiduLivingExeriseTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white_wymimicry"
+                android:drawableLeft="@drawable/living_exercise"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="无数据" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/futureWeatherLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@color/white_wymimicry"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccc"
+            android:text="未来几天天气" />
+
+        <ListView
+            android:id="@+id/futureWeatherListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/orange_menu"
+            android:dividerHeight="1dp"
+            android:scrollbars="vertical" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/baiduMoreLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="0.1dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/shape_register_white_bg"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="visible" >
+
+        <Button
+            android:id="@+id/editCityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_menu_btn"
+            android:padding="8dp"
+            android:text="修改城市"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/baiduRefreshButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/selector_menu_btn"
+            android:padding="8dp"
+            android:text="刷新天气"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/moreDayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0.1dp"
+            android:background="@drawable/selector_menu_btn"
+            android:padding="8dp"
+            android:text="未来几天"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>
